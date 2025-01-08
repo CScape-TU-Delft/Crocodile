@@ -11,7 +11,8 @@ import shutil
 ##################################
 ####   SET PROJECT DIRECTORY  ####
 ##################################
-project_directory="C:/Users/tkettler/surfdrive/Python/Diffusion_project"
+#project_directory="C:/Users/tkettler/surfdrive/Python/Diffusion_project"
+project_directory = os.path.dirname(os.path.abspath(__file__))
 simulate=True #start simulation
 
 class C:
@@ -44,6 +45,13 @@ class C:
         self.MSL=0 #MSL at start of simulation
         self.output_frequency= 1 # amount of timesteps between output to netCDF
         self.display_bedlevel = True
+
+# Create the required directory and set permissions
+required_directory = os.path.join(project_directory, "0")
+if not os.path.exists(required_directory):
+    os.makedirs(required_directory)
+    os.chmod(required_directory, 0o700)  # Grant write permissions
+
 Sto = False
 erosion_uncertainty = False
 
