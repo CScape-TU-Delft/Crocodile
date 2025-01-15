@@ -39,7 +39,12 @@ mkdir 0
 
 chmod u+w 0
 
-3. Run the Model
+3. Create the Conda Environment
+
+Create a conda environment containing all the required dependencies from the environment.yml file using the command conda env create -f environment.yml. This command will create a conda environment named crocodile.
+Activate the environment using the command cona activate crocodile
+
+5. Run the Model
 
 To execute the model, follow these steps:
 
