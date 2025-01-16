@@ -16,45 +16,59 @@ This model has been applied to case studies along the Dutch coastline, demonstra
 # How to Use
 Follow the steps below to set up and use the model:
 
-1. Install Dependencies
+## Install Dependencies
    
-Ensure you have Python installed along with the required libraries. You can install the dependencies by running the following command:
-pip install numpy matplotlib scipy pandas netCDF4
+Follow the steps below to create a conda environment with the dependencies:
 
-2. Preparation Steps
+1. Create a conda environment using the provided environment.yml file. This will download and install the dependencies required to run the model.
+
+```
+conda env create -f environemnt.yml
+```
+
+2. Activate the conda environment created above.
+```
+conda activate crocodile
+```
+
+
+
+## Preparation to run the model
    
-a. Update the Project Path
+1. Update the Project Path
 
-•	Open the Crocodile_input.py file.
+    - Open the Crocodile_input.py file.
+    
+    - Modify the project_directory variable to reflect the path to your project folder. Example: project_directory = "/path/to/your/project"
 
-•	Modify the project_directory variable to reflect the path to your project folder. Example: project_directory = "/path/to/your/project"
+2. Create the Required Directory
 
-b. Create the Required Directory
+    - In the root of your project folder, create an empty directory named `0`:
 
-•	In the root of your project folder, create an empty directory named 0:
-
+```
 mkdir 0
+```
 
-•	Grant write permissions to the directory:
+3. Grant write permissions to the directory:
 
+```
 chmod u+w 0
+```
 
-3. Create the Conda Environment
-
-Create a conda environment containing all the required dependencies from the environment.yml file using the command conda env create -f environment.yml. This command will create a conda environment named crocodile.
-Activate the environment using the command cona activate crocodile
-
-5. Run the Model
+## Run the Model
 
 To execute the model, follow these steps:
 
-•	Navigate to the project folder in your terminal.
+- Navigate to the project folder in your terminal.
 
-•	Run the main script:
+- Run the main script:
 
-python Crocodile_model.py
+```
+python Crocodile_input.py
+```
 
-•	The output will include updated coastal profile simulations and visualizations of morphological changes.
+The output will include updated coastal profile simulations and visualizations of morphological changes.
+
 
 # File Structure
 Key Files
